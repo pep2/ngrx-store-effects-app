@@ -36,7 +36,9 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     // nice short tidy way to do the comment out code below
     this.pizzas$ = this.store.select<any>(fromStore.getAllPizzas);
-    
+
+    this.store.dispatch(new fromStore.LoadPizzas());
+
     // this.store.select<any>(fromStore.getAllPizzas).subscribe(state => {
     //   this.pizzas = state;
     // })
